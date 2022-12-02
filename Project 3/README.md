@@ -78,3 +78,30 @@ Datasets: `raw_cleaned`, `combined_cleaned`
 |title |string|raw, combined|Headline of the posts submitted on the subreddit.
 |selftext |string|raw, combined|Body of the posts found in the subreddit. Typically contains more details and context to the post.
 |post |string|raw, combined|Formed by merging the title and selftext columns.
+
+## Summary of Results
+
+|Count vectorisation technique|Model type|Train score|Test score|AUC| 
+|:----------------------------|:---------|:---------:|:--------:|:--:|  
+|CountVectorizer |Naive-Bayes Multinomial|0.9175|0.8644|0.92|
+|CountVectorizer |Logistic Regression|0.9935|0.8659|0.93|
+|Bigram |Naive-Bayes Multinomial|0.9943|0.8225|0.90|
+|Bigram |Logistic Regression|0.998|0.812|0.88|
+|TF-IDF |Naive-Bayes Multinomial|0.9185|0.8562|0.93|
+|<font color="blue">TF-IDF </font>|<font color="blue">Logistic Regression</font>|<font color="blue">0.9435</font>|<font color="blue">0.8846</font>|<font color="blue">0.95</font>|
+
+
+## Conclusions
+The Logistic Regression Model is the most successful classification model, with train and test scores of 0.9435 and 0.8846 respectively and AUC value of 0.95. This means that the model is best able to generalise on new text data and accurately identify a text post that contains user's experiences with depression. At the same time, as the model has highest AUC of 0.95, it can best differentiate whether a post contains user's experiences with depression or anxiety.
+
+However, it should be noted that there are a few limitations of this model. As reddit submissions were used as proxy, textual evidence was only limited to the 30 days worth of submissions queried from each subreddit. There could be other pressing issues that plague users with anxiety or depression that were not discussed and/or not captured by the dataset. As Chippy, the app by uniCHIP is designed for local university students, there could also be a lack of representation of this demographic in the respective communities of r/Anxiety and r/depression. As such, future improvements could be made by scraping data of other university forums instead, in order to capture data more representative of our user population. Additionally, analyses were only done on unigrams, bigrams and trigrams, which may not give a full understanding of the submissions posted about the topic. We could further classify posts as user's own experience with anxiety or depression, or caregiver's experience in dealing with someone with the mental health disorder, then conduct sentiment analyses on each type of post.
+
+In reality, there could be co-morbidity amongst users. Patients with mental health disorders can experience both anxiety and depressive symptoms. However, for this project, due to limited internal data, we work on the premise that users submit posts to the subreddit with their predominant symptoms. 
+
+
+## Recommendations
+The mental health illness umbrella is not limited to anxiety and depression. Thus, we can expand this project to classify other prevalent mental health issues as well. Future developments uniCHIP can make to its app, Chipper include a way to automatically identify posts containing user experiences with poor mental health concerns. 
+
+Additionally, collaboration with local mental health resources can bolster uniCHIP's endeavors to achieve its corporate social responsibility goals. Working on a campaign with mental health helplines and national healthcare institutions will further raise awareness for mental health issues and educate users on how to identify and care for someone suffering from poor mental health.
+
+
