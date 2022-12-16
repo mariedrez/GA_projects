@@ -12,7 +12,7 @@ Recent research<a href="https://acamh.onlinelibrary.wiley.com/doi/abs/10.1111/jc
 As the data team of uniCHIP- a social networking site and news aggregator that has been newly created for local university students, we want to be able to identify posts that contain textual evidence of users' experience with anxiety and/or depression on our platform. This can be achieved by developing a classification model that can predict with over 90% accuracy and precision, which category a post belongs to. However, as we have only recently launched, we are training our model using text data collected from subreddits which are forums dedicated to the specific topic. The text data collected from the subreddits r/Anxiety and r/depression will act as proxy for the user posts uploaded to the uniVERSE forums. Hence, we will be able to train the model to direct these users towards useful and relevant community resources for the mental health issues they are facing.
 
 ## External Research
-***
+
 <a href="https://www.reddit.com" target="_blank">Reddit</a> is a social news aggregator site that is organised into niche forums called subreddits. Each subreddit is dedicated to its namesake topic. Posts that appear on a subreddit are guided by a unique set of rules, a team of moderators and an internal voting system<a href="https://nealschaffer.com/subreddit/" target="_blank"><sup>5</sup></a>. Subreddits are notated as /r/{topic}, hence, r/Anixety and r/depression refers subreddits that aggregates discussions on the respective topics.
 
 Here are some brief notes on the subreddits from which data was scraped:
@@ -27,7 +27,7 @@ Both subreddits have similar rules for submissions<a href="https://www.reddit.co
 
 
 ## Executive Summary
-***
+
 In the first notebook, 30 days of Subreddit submissions data was queried and collected from Reddit using Pushshift API. Data from r/Anxiety was saved as `anxiety_data` while data from r/depression was saved as `depression_data`. Next, the raw datasets collected were joined to hold both datasets aforementioned and saved as `raw_cleaned`.
 
 In the second notebook, data analysis was done. To achieve this, the textual data was cleaned in a few steps. Null values, posts marked as 'removed' and 'deleted' were examined and dealt with appropriately. Next, the 'title' and 'selftext' columns were also merged to form a more cohesive single column 'post' where the submitted text can be analysed more efficiently as a whole. After the cleaning phase, the datasets were saved as `anxiety_cleaned` and `depression_cleaned` respectively.
