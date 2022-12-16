@@ -1,4 +1,4 @@
-# Classifiying Social Media Posts on Mental Health
+# Project 3: Classifiying Social Media Posts on Mental Health
 ***
 
 ## Introduction
