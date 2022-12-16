@@ -9,7 +9,7 @@ Recent research<a href="https://acamh.onlinelibrary.wiley.com/doi/abs/10.1111/jc
 
 ## Problem Statement
 
-As the data team of uniCHIP- a social networking site and news aggregator that has been newly created for local university students, we want to be able to identify posts that contain textual evidence of users' experience with anxiety and/or depression on our platform. This can be achieved by developing a classification model that can predict with over 90% accuracy and precision, which category a post belongs to. However, as we have only recently launched, we are training our model using text data collected from subreddits which are forums dedicated to the specific topic. The text data collected from the subreddits r/Anxiety and r/depression will act as proxy for the user posts uploaded to the uniVERSE forums. Hence, we will be able to train the model to direct these users towards useful and relevant community resources for the mental health issues they are facing.
+As the data team of uniCHIP- a social networking site and news aggregator that has been newly created for local university students, we want to be able to identify posts that contain textual evidence of users' experience with anxiety and/or depression on our platform. This can be achieved by developing a classification model that can predict with over 90% accuracy and precision, which category a post belongs to. However, as we have only recently launched, we are training our model using text data collected from subreddits which are forums dedicated to the specific topic. The text data collected from the subreddits r/Anxiety and r/depression will act as proxy for the user posts uploaded to the Chippy uniVERSE forums. Hence, we will be able to train the model to direct these users towards useful and relevant community resources for the mental health issues they are facing.
 
 ## External Research
 
@@ -100,7 +100,7 @@ In reality, there could be co-morbidity amongst users. Patients with mental heal
 
 
 ## Recommendations
-The mental health illness umbrella is not limited to anxiety and depression. Thus, we can expand this project to classify other prevalent mental health issues as well. Future developments uniCHIP can make to its app, Chipper include a way to automatically identify posts containing user experiences with poor mental health concerns. 
+The mental health illness umbrella is not limited to anxiety and depression. Thus, we can expand this project to classify other prevalent mental health issues as well. Future developments uniCHIP can make to its app, Chippy include a way to automatically identify posts containing user experiences with poor mental health concerns. 
 
 Additionally, collaboration with local mental health resources can bolster uniCHIP's endeavors to achieve its corporate social responsibility goals. Working on a campaign with mental health helplines and national healthcare institutions will further raise awareness for mental health issues and educate users on how to identify and care for someone suffering from poor mental health.
 
