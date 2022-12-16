@@ -11,19 +11,19 @@ Your presentation and report should be geared toward non-technical executives of
 
 ## External Research
 
-In 2019, more than 1.72 million graduates (estimated 52% of the US high school graduands) sat for the ACT <a href="https://www.act.org/content/dam/act/unsecured/documents/National-CCCR-2019.pdf" target="_blank">(source)</a>.
-This is a slight drop from the 1.9 million ACT candidates (or estimated 55% of the graduating batch) reported in 2018. <a href="https://www.washingtonpost.com/education/2018/10/23/sat-reclaims-title-most-widely-used-college-admission-test/" target="_blank">(source)</a>. Meanwhile, over 2.2 million graduates sat for the SAT, with a 4% increase from the previous year. <a href="https://newsroom.collegeboard.org/over-22-million-students-class-2019-took-sat-largest-group-ever" target="_blank">(source)</a>. Evidence here suggests that the ACT is becoming relatively less popular over the years.
+In 2019, more than 1.72 million graduates (estimated 52% of the US high school graduands) sat for the ACT <a href="https://www.act.org/content/dam/act/unsecured/documents/National-CCCR-2019.pdf" target="_blank"><sup>1</sup></a>.
+This is a slight drop from the 1.9 million ACT candidates (or estimated 55% of the graduating batch) reported in 2018<a href="https://www.washingtonpost.com/education/2018/10/23/sat-reclaims-title-most-widely-used-college-admission-test/" target="_blank"><sup>2</sup></a>. Meanwhile, over 2.2 million graduates sat for the SAT, with a 4% increase from the previous year<a href="https://newsroom.collegeboard.org/over-22-million-students-class-2019-took-sat-largest-group-ever" target="_blank"><sup>3</sup></a>. Evidence here suggests that the ACT is becoming relatively less popular over the years.
 
-This can be traced to by the steady gain in market share by the College Board that owns the SAT, through "revising the test and entering into deals with numerous states and school systems to give students the exam" <a href="https://www.washingtonpost.com/education/2018/10/23/sat-reclaims-title-most-widely-used-college-admission-test/" target="_blank">(source)</a>. Similar arrangements exist for the ACT as well, that allow students in said states and school systems to sit for the exam on a school day at no charge. As it stands, 16 states allow students to sit for the ACT exams at no charge, while 11 states offer students to sit for the SAT at no charge. <a href="https://www.collegeraptor.com/getting-in/articles/act-sat/states-act-sat-given-free/" target="_blank">(source)</a>. 
+This can be traced to by the steady gain in market share by the College Board that owns the SAT, through "revising the test and entering into deals with numerous states and school systems to give students the exam" <a href="https://www.washingtonpost.com/education/2018/10/23/sat-reclaims-title-most-widely-used-college-admission-test/" target="_blank"><sup>4</sup></a>. Similar arrangements exist for the ACT as well, that allow students in said states and school systems to sit for the exam on a school day at no charge. As it stands, 16 states allow students to sit for the ACT exams at no charge, while 11 states offer students to sit for the SAT at no charge<a href="https://www.collegeraptor.com/getting-in/articles/act-sat/states-act-sat-given-free/" target="_blank"><sup>5</sup></a>. 
 
-Applications to sit for the ACT and SAT cost a considerable sum. Self-sponsored ACT candidates pay \\$63 to sit for the exams, and an additional \\$25 to be tested on an optional Writing component. On the other hand, self-sponsored SAT candidates pay \\$60 to sit for the exams <a href="https://blog.prepscholar.com/act-vs-sat" target="_blank">(source)</a>.
+Applications to sit for the ACT and SAT cost a considerable sum. Self-sponsored ACT candidates pay \\$63 to sit for the exams, and an additional \\$25 to be tested on an optional Writing component. On the other hand, self-sponsored SAT candidates pay \\$60 to sit for the exams <a href="https://blog.prepscholar.com/act-vs-sat" target="_blank"><sup>6</sup></a>.
 
 
-How prevalent is it that students sit for both tests? While colleges generally do not discriminate between the ACT and the SAT, a significant percentage of students sit for both exams <a href="https://www.princetonreview.com/college-advice/4-reasons-to-take-both-sat-and-act" target="_blank">(source)</a>. Among many reasons to sit for both exams include: 
-- the ability to offer additional information on one's strengths to the Admissions Committe of one's intended college <a href="https://www.nytimes.com/2020/05/26/learning/should-students-be-required-to-take-the-sat-and-act-to-apply-to-college.html" target="_blank">(source)</a>, 
+How prevalent is it that students sit for both tests? While colleges generally do not discriminate between the ACT and the SAT, a significant percentage of students sit for both exams<a href="https://www.princetonreview.com/college-advice/4-reasons-to-take-both-sat-and-act" target="_blank"><sup>7</sup></a>. Among many reasons to sit for both exams include: 
+- the ability to offer additional information on one's strengths to the Admissions Committe of one's intended college <a href="https://www.nytimes.com/2020/05/26/learning/should-students-be-required-to-take-the-sat-and-act-to-apply-to-college.html" target="_blank"><sup>8</sup></a>, 
 
 - being able to prepare more efficiently in the event that one is intending to re-sit either/both exams to earn target scores, and 
-- increasing one's chances of earning merit-based financial aid upon enrolment to college <a href="https://www.princetonreview.com/college-advice/4-reasons-to-take-both-sat-and-act" target="_blank">(source)</a>. 
+- increasing one's chances of earning merit-based financial aid upon enrolment to college <a href="https://www.princetonreview.com/college-advice/4-reasons-to-take-both-sat-and-act" target="_blank"><sup>9</sup></a>.
 
 ## Data Science workflow
 
@@ -44,10 +44,9 @@ Finally, based on the analyses, recommendations were passed about how ACT inc ca
 ## Data Dictionary
 
 |Feature|Type|Dataset|Description|
-|---|---|---|---|
-
+|:-----------|:---|:--------|:---------------------------------------------------------------------------------|
 |**act_free**|bool|final_csv|Expresses whether students in a state can take the ACT for free. 1= True, 0= False|
-|**act17_part_rate** **act18_part_rate** **act19_part_rate** |*float*|final_csv|ACT participation rate (in percentage) in a given year. 0.22 means 22%| 
+|**act_part_rate** |*float*|final_csv|ACT participation rate (in percentage) in a given year. 0.22 means 22%| 
 |**act_com_score**|*float*|final_csv|ACT Composite score for a given state in a given year. act17_com_score refers to the composite score in the year 2017. (Possible score range 1-36)| 
 |**part_pct_change**|*float*|final_csv|State participation in a given exam as percentage of national average participation| 
 |**sat_free**|*bool*|final_csv|Expresses whether students in a state can take the SAT for free. 1= True, 0= False| 
@@ -72,4 +71,4 @@ To maintain high participation rates in states that make it mandatory, I suggest
 
 Secondly, to add focus on marketing the ACT exam in states and school systems where SAT is prevalent choice. By angling it as a welcome additional metric to profile a high-achieving student, ACT, inc can increase its market share of the test-taking population and thus participation rates. 
 
-Thirdly, to update test conditions to make it more equitable for all students. Aagard postulates that there is a significant relationship between testing condition and student test scores for students of various capabilities <a href="https://www.thefreelibrary.com/The+relationship+between+testing+condition+and+student+test+scores.-a0126582635" target="_blank">(source)</a> This can help to boost performance of low-achieving students who form bulk of underserved student population and improve their college admission chances.
+Thirdly, to update test conditions to make it more equitable for all students. Aagard postulates that there is a significant relationship between testing condition and student test scores for students of various capabilities <a href="https://www.thefreelibrary.com/The+relationship+between+testing+condition+and+student+test+scores.-a0126582635" target="_blank"><sup>10</sup></a>. This can help to boost performance of low-achieving students who form bulk of underserved student population and improve their college admission chances.
