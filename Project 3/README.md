@@ -1,14 +1,14 @@
 # Project 3: Classifiying Social Media Posts on Mental Health
-***
+
 
 ## Introduction
-***
+
 This project examines subreddits <a href="https://www.reddit.com/r/Anxiety/" target="_blank">r/Anxiety</a> and <a href="https://www.reddit.com/r/depression/" target="_blank">r/depression</a> to figure out the textual evidence that differentiate discussions on the mental health disorders. With the ongoing global coronavirus pandemic<a href="https://covid19.who.int/region/wpro/country/sg" target="_blank"><sup>1</sup></a>, as well as political and economic crises<a href="https://www.cfr.org/report/conflicts-watch-2022" target="_blank"><sup>2</sup></a>, there is an increase in the number of people who are facing dips in their mental health. The National Population Health Survey<a href="https://www.moh.gov.sg/docs/librariesprovider5/default-document-library/nphs-2020-survey-report.pdf" target="_blank"><sup>3</sup></a> conducted during the nascence of the corona outbreak reported a decline in mental well-being of Singaporeans, with the mean score decreasing to 7.28 in 2020 from 7.4 in 2018. The study also found that only 1 in 2 were willing to seek professional consultation when they are overwhelmed by stress. Most interestingly, the survey uncovered poor mental health to be most prevalent in young people, with 21.5% of those between 18 to 29 years old surveyed facing mental health issues.
 
 Recent research<a href="https://acamh.onlinelibrary.wiley.com/doi/abs/10.1111/jcpp.13606" target="_blank"><sup>4</sup></a> conducted to probe the global prevalence of anxiety and depression symptoms among college students and potential associated factors found that 33.6% of college students collectively experience depression and anxiety symptoms. The prevalence of symptoms for anxiety and depression respectively were found to be higher in studies conducted after the 2019 coronavirus outbreak.
 
 ## Problem Statement
-***
+
 As the data team of uniCHIP- a social networking site and news aggregator that has been newly created for local university students, we want to be able to identify posts that contain textual evidence of users' experience with anxiety and/or depression on our platform. This can be achieved by developing a classification model that can predict with over 90% accuracy and precision, which category a post belongs to. However, as we have only recently launched, we are training our model using text data collected from subreddits which are forums dedicated to the specific topic. The text data collected from the subreddits r/Anxiety and r/depression will act as proxy for the user posts uploaded to the uniVERSE forums. Hence, we will be able to train the model to direct these users towards useful and relevant community resources for the mental health issues they are facing.
 
 ## External Research
