@@ -103,5 +103,3 @@ In reality, there could be co-morbidity amongst users. Patients with mental heal
 The mental health illness umbrella is not limited to anxiety and depression. Thus, we can expand this project to classify other prevalent mental health issues as well. Future developments uniCHIP can make to its app, Chippy include a way to automatically identify posts containing user experiences with poor mental health concerns. 
 
 Additionally, collaboration with local mental health resources can bolster uniCHIP's endeavors to achieve its corporate social responsibility goals. Working on a campaign with mental health helplines and national healthcare institutions will further raise awareness for mental health issues and educate users on how to identify and care for someone suffering from poor mental health.
-
-
