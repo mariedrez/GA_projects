@@ -1,64 +1,80 @@
-# Project 2: Ames Housing Data & Kaggle Challenge
+# Classifiying Social Media Posts on Mental Health
+***
 
+## Introduction
+***
+This project examines subreddits <a href="https://www.reddit.com/r/Anxiety/" target="_blank">r/Anxiety</a> and <a href="https://www.reddit.com/r/depression/" target="_blank">r/depression</a> to figure out the textual evidence that differentiate discussions on the mental health disorders. With the ongoing global coronavirus pandemic<a href="https://covid19.who.int/region/wpro/country/sg" target="_blank"><sup>1</sup></a>, as well as political and economic crises<a href="https://www.cfr.org/report/conflicts-watch-2022" target="_blank"><sup>2</sup></a>, there is an increase in the number of people who are facing dips in their mental health. The National Population Health Survey<a href="https://www.moh.gov.sg/docs/librariesprovider5/default-document-library/nphs-2020-survey-report.pdf" target="_blank"><sup>3</sup></a> conducted during the nascence of the corona outbreak reported a decline in mental well-being of Singaporeans, with the mean score decreasing to 7.28 in 2020 from 7.4 in 2018. The study also found that only 1 in 2 were willing to seek professional consultation when they are overwhelmed by stress. Most interestingly, the survey uncovered poor mental health to be most prevalent in young people, with 21.5% of those between 18 to 29 years old surveyed facing mental health issues.
 
-## Background
-
-NexRes is a real estate agency in Ames with a portal that is highly trusted for its comprehensive market information on residential property in Iowa. NexRes helms over 40 real estate agents who assist people to buy and sell their homes. There is stiff competition in the Iowa real estate market, with more than 50 agencies vying for a slice of the pie. 
+Recent research<a href="https://acamh.onlinelibrary.wiley.com/doi/abs/10.1111/jcpp.13606" target="_blank"><sup>4</sup></a> conducted to probe the global prevalence of anxiety and depression symptoms among college students and potential associated factors found that 33.6% of college students collectively experience depression and anxiety symptoms. The prevalence of symptoms for anxiety and depression respectively were found to be higher in studies conducted after the 2019 coronavirus outbreak.
 
 ## Problem Statement
-
-I am leading the Data team at Nex Res, whose vision is to maintain its top status in the growing industry. NexRes needs the team to develop a data-driven solution to achieve their vision. Additionally, NexRes is a excellence-oriented and people-centred organisation, motivated to empower our agents to carry out their job.  To that end, the Data team has undertaken this project to predict the final price of each home with the lowest RMSE score possible via unique feature engineering and linear regression models such as Simple Linear, Ridge and Lasso.
-
-The best model will help NexRes agents to advise clients on seeking fair valuations on their property, and as well as advise clients on actionable steps to take to reach their target price. NexRes agents are concerned with assisting homeowners who fall under two categories: those who are looking to sell, and those who are looking to buy. Agents want to provide top value to clients, who in turn want these questions answered:
-
-* To what extent will renovations and/or remodeling give a good ROI (return of investment)? 
-* Given a set list of desired features, what price range can they expect?
-* Given a limited budget, which properties offer the most desired features?
+***
+As the data team of uniCHIP- a social networking site and news aggregator that has been newly created for local university students, we want to be able to identify posts that contain textual evidence of users' experience with anxiety and/or depression on our platform. This can be achieved by developing a classification model that can predict with over 90% accuracy and precision, which category a post belongs to. However, as we have only recently launched, we are training our model using text data collected from subreddits which are forums dedicated to the specific topic. The text data collected from the subreddits r/Anxiety and r/depression will act as proxy for the user posts uploaded to the uniVERSE forums. Hence, we will be able to train the model to direct these users towards useful and relevant community resources for the mental health issues they are facing.
 
 ## External Research
+***
+<a href="https://www.reddit.com" target="_blank">Reddit</a> is a social news aggregator site that is organised into niche forums called subreddits. Each subreddit is dedicated to its namesake topic. Posts that appear on a subreddit are guided by a unique set of rules, a team of moderators and an internal voting system<a href="https://nealschaffer.com/subreddit/" target="_blank"><sup>5</sup></a>. Subreddits are notated as /r/{topic}, hence, r/Anixety and r/depression refers subreddits that aggregates discussions on the respective topics.
 
-Ames is a city in Iowa, United States with a population of **66,424** as of 2021 <a href="https://www.census.gov/quickfacts/amescityiowa” target="_blank"><sup>1</sup></a>. The city spans over 27 square miles, with a population density of **2,484 people per square mile**. Of the 23,866 households in the city, 41% of them are family dwellings<a href="https://www.census.gov/quickfacts/amescityiowa” target="_blank"><sup>2</sup></a>. Additionally, the average car ownership in Ames, Iowa is 2 cars per household a href="https://datausa.io/profile/geo/ames-ia/” target="_blank"><sup>3</sup></a>
+Here are some brief notes on the subreddits from which data was scraped:
 
-The city has a humid continental climate <a href="https://www.weatherbase.com/weather/weather-summary.php3?s=6357&cityname=Ames,+Iowa,+United+States+of+America” target="_blank"><sup>4</sup></a>, where on average, the warmest records a daily mean of 74.0°F (or 23.3°C) and the coldest month records a daily mean of 20.4°F (or -6.44°C)<a href="https://www.usclimatedata.com/climate/ames/iowa/united-states/usia0026” target="_blank"><sup>5</sup></a>. These are general characteristics of the population and the geography of Ames that gives us a glimpse into the patterns of real estate transactions in the city.
+* r/Anxiety was created on created Sep 15, 2008. As of end-November 2022, the subreddit recorded 581k members. The community has officially described the r/Anxiety forum as "discussion and support for sufferers and loved ones of any anxiety disorder". 
 
+* r/depression was created Jan 1, 2009. As of end-November 2022, the subreddit recorded 919k members. The community has officially described the r/depression forum as "peer support for anyone struggling with a depressive disorder."
 
-## Data Science workflow
-
-In order to help NexRes agents answer the aforementioned questions, I fitted three different regression models to the housing data in order to determine the features that will most influence the sale price, and the features that are least influential as well. The performance of the models will be evaluated using the Root Mean Squared Error (RMSE). The RMSE is the square root of the variance of the residuals. It tells us how close the observed data points are to the model's predicted values, i.e, the absolute fit of the model to the data.
-
-As the project deals with a significant amount of data, the coding work has been split into three Jupyter notebooks: 
-
-* Data Cleaning, Exploratory Data Analysis (EDA) and feature engineering of the train data,
-* Feature engineering of the test data, and
-* Model fitting and Model evaluation
-
-## Summary of Findings
-A Lasso regression model had the best predictive performance on housing sale price in Ames USA among all the regression models tested. The model revealed which factors which are significant determiners of a property's sale price. With an r-squared value of  (0.808) and an RMSE of 34220.39, it can be used to predict house prices in Ames with relatively high accuracy based on characteristics of the house.
-
-The features which are most influential on a property's sale prices are: overall quality of property, above grade living area, total square footage of basement, garage area, number of cars that fit in the garage, square footage of first floor, year house was built, the last year the house was remodelled/renovated, number of full baths,to name a few, based on the correlation coefficient with the sale price.
-
-Property owners looking to sell can gauge the price their home can fetch, as well as plan out which enhancement features they should invest in to receive a target sale price. Meanwhile, property owners looking to buy can use the trained model to predict the features of their future home given their current budget.
-
-## Limitations
-
-However, the model is rather limited as it was developed using data collected on properties sold between 2006 - 2010. Furthermore, the dataset only captured the real estate transactions in Ames, Iowa. As the dataset is limited in terms of both the time frame, it could not capture any year-to-year changes in property sale prices as the economy recovered from the 2007-2009 economic recession, as well as price changes due to inflation. In addition, as the dataset is specific to Ames, the model will not work reliably on forecasting prices of properties in other locations without the location-specific data. In addition, the dataset also does not provide any insight into other possibly influential factors, such as proximity to recreation centres, business districts and education institutions that can also affect a property's valuation and hence its sale price.
-
-All in all, property sale prices do not present an easy case to forecast as these are also affected by the economic climate, human sentiment, as well as other factors that cannot be captured by the data set. While there cannot be a perfect model, this project does prove to be a good proof of concept, and the model can be used to deploy an Application Processing Interface (API) that can serve as a minimum viable product. 
+Both subreddits have similar rules for submissions<a href="https://www.reddit.com/r/Anxiety/" target="_blank"><sup>6</sup></a>  <a href="https://www.reddit.com/r/depression/" target="_blank"><sup>7</sup></a>. The respective communities urged its members to submit posts relevant to the topic, provide support when responding to original posts, to take care of their 'tone', and refrain from advocating for any quick fix solutions. Both communities also frown upon solicitation of any sort. In addition, r/anxiety encourages sharing of research studies, while r/depression discourages members from making any offers/ requests/ advocacy for (or against) treatment as well as pro-self harm posts/replies.
 
 
-## Conclusions & Recommendations
-
-There is no perfect model as building any machine-learning model necessitates dealing with the bias-variance trade-off. For this project, Lasso Regression was the best model according to RMSE scores. It inevitably traded some variance for bias, which ultimately lead to a smaller error overall. As the three models instantiated focused on only 6 features, future iterations of this project can experiment with nominal features such as exterior 1 or  masonry veneer type. More research into the data collection methods especially regarding the columns exterior 1 and exterior 2 can shed some light into how to quantify it appropriately to be fed into the eventual machine-learning model. The current dataset have marked a number of duplicate observations between the two columns (exterior 1 and 2), which obscured my initial intention to include it, as external research proved that exterior renovation can have significant impact on a property's resale value <a href="https://www.familyhandyman.com/list/which-exterior-renovation-adds-most-value/" target="_blank">(source)</a>. 
-
-In addition, the next iteration of this project can also explore the use of non-linear regression models for sale price prediction. As non-linear regression can fit a wider range of curves, there is a possibility of developing a model with a better fit than my efforts with linear regression techniques.
-
-To find out the model's generalisability, further research is needed to capture more up-to-date data, from property markets aside from Ames, Iowa to shed light on how different economic situations and climates can influence house features and its sale prices.
 
 
+## Executive Summary
+***
+In the first notebook, 30 days of Subreddit submissions data was queried and collected from Reddit using Pushshift API. Data from r/Anxiety was saved as `anxiety_data` while data from r/depression was saved as `depression_data`. Next, the raw datasets collected were joined to hold both datasets aforementioned and saved as `raw_cleaned`.
+
+In the second notebook, data analysis was done. To achieve this, the textual data was cleaned in a few steps. Null values, posts marked as 'removed' and 'deleted' were examined and dealt with appropriately. Next, the 'title' and 'selftext' columns were also merged to form a more cohesive single column 'post' where the submitted text can be analysed more efficiently as a whole. After the cleaning phase, the datasets were saved as `anxiety_cleaned` and `depression_cleaned` respectively.
+
+Then, the text data was pre-processed in order to aid the Natural Language Processing (NLP) analyses later. As such, punctuations were removed, and so were numbers and stopwords. The text in the 'post' column were further treated with functions 'tokenise' and 'lemmatise'. Tokenisation breaks long strings of text into words, whose relationships to each other and the subreddit label can thus be examined. Lemmatisation reduces these words further into its meaningful base form, based on its morphology. 
+
+Exploratory data analyses conducted on each subreddit's dataset uncovered highly frequent words in each subreddit, as well as highly frequent bigrams and trigrams unique to each subreddit. There were some co-occurring words that appeared in both subreddits' highly frequent word lists. The stopword list was extended to include filler words and personal pronouns, and these were subsequently removed from the cleaned datasets. Fillers are discourse markers that are unnecessary cliches and do not offer meaning to the topic. Personal pronouns are also highly common in both datasets as submissions to the subreddits are usually based on the user's personal experience. The cleaned datasets were merged into a single dataset `combined_cleaned` and ready for analysis with NLP.
+
+Before the word tokens in the cleaned dataset can be analysed, it has to be transformed further into vectors, which turns them into numbers that can be understood by the machine. Representing text data numerically is called count vectorization. There are a few count vectorization techniques, and in this project, CountVectorization and TF-IDF are used. In addition, CountVectorization is done on single word tokens as well as bigram tokens. 
+
+The Classification Models trained to classify the text data are mainly Naive-Bayes Multinomial and Logistic Regression. Each model type was trained separately data that has been transformed using different techniques: CountVectorisation of word tokens, CountVectorisation of bigram tokens, and TF-IDF vectorisation. As such, six different classification models were fitted on the train data and used to derive predictions on the test data. 
+
+In order to evalute each model's performance, the train and test scores as well as the AUC values (from the AUC-ROC plots) were considered. For this project, a successful model is defined as one with high train and test scores, with least difference between the two, as it means that the model is suitably fitted, can be generalised to new and unseen data and can accurately predict whether text belongs to positive class (r/depression). It is more important to correctly identify a post containing experiences with depression than it is to wrongly identify other posts as containing experiences with depression. 
+
+Furthermore, an AUC that is closest to 1 marks a successful model as it means that the model has excellent capacity to distinguish between positive class (feature belongs to r/depression) and negative class (feature belongs to r/Anxiety).
 
 ## Data Dictionary
+***
 
-Official data dictionary: http://jse.amstat.org/v19n3/decock/DataDocumentation.txt
+Datasets: `anxiety_data`, `anxiety_cleaned`
+
+|Feature|Type| Dataset| Description|  
+|:---------|----- |-----------|:--------------|  
+|subreddit |string| anxiety | Labels the subreddit the posts is extracted from. Named after the topic of interest.
+|title |string|anxiety|Headline of the posts submitted on the subreddit. 
+|selftext |string|anxiety|Body of the posts found in the subreddit. Typically contains more details and context to the post. 
+|post |string|anxiety|Formed by merging the title and selftext columns.
+
+<br>
+
+Datasets: `depression_data`, `depression_cleaned`
+
+|Feature|Type| Dataset| Description|  
+|:---------|----- |-----------|:--------------|  
+|subreddit |string|depression| Labels the subreddit the posts is extracted from. Named after the topic of interest.
+|title |string|depression|Headline of the posts submitted on the subreddit.
+|selftext |string|depression|Body of the posts found in the subreddit. Typically contains more details and context to the post.  
+|post |string|depression|Formed by merging the title and selftext columns.
 
 
+<br>
 
+Datasets: `raw_cleaned`, `combined_cleaned`
+
+|Feature|Type| Dataset| Description|  
+|:---------|----- |-----------|:--------------|  
+|subreddit |string|raw, combined|Labels the subreddit the posts is extracted from. Named after the topic of interest.
+|title |string|raw, combined|Headline of the posts submitted on the subreddit.
+|selftext |string|raw, combined|Body of the posts found in the subreddit. Typically contains more details and context to the post.
+|post |string|raw, combined|Formed by merging the title and selftext columns.
