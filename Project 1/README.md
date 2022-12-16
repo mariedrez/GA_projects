@@ -45,16 +45,15 @@ Finally, based on the analyses, recommendations were passed about how ACT inc ca
 
 |Feature|Type|Dataset|Description|
 |:-----------|:---|:--------|:---------------------------------------------------------------------------------|
-|**act_free**|bool|final_csv|Expresses whether students in a state can take the ACT for free. 1= True, 0= False|
-|**act_part_rate** |*float*|final_csv|ACT participation rate (in percentage) in a given year. 0.22 means 22%| 
-|**act_com_score**|*float*|final_csv|ACT Composite score for a given state in a given year. act17_com_score refers to the composite score in the year 2017. (Possible score range 1-36)| 
-|**part_pct_change**|*float*|final_csv|State participation in a given exam as percentage of national average participation| 
-|**sat_free**|*bool*|final_csv|Expresses whether students in a state can take the SAT for free. 1= True, 0= False| 
-|**sat19_part_rate**|*float*|final_csv|SAT participation rate (in percentage) in the year 2019. 0.22 means 22%|
-|**sat19_total_score**|*float*|final_csv|Average total score for a given state in the year 2019, computed using EWR and Math scores (Possible score range 400-1600)|  
-|**score_pct_change**|*float*|final_csv|State average score in a given exam as percentage of national average score| 
-|**state**|*object*|final_csv|Names of all US states and the District of Columbia| 
-
+|act_free|bool|final_csv|Expresses whether students in a state can take the ACT for free. 1= True, 0= False|
+|act_part_rate |*float*|final_csv|ACT participation rate (in percentage) in a given year. 0.22 means 22%| 
+|act_com_score|*float*|final_csv|ACT Composite score for a given state in a given year. act17_com_score refers to the composite score in the year 2017. (Possible score range 1-36)| 
+|part_pct_change|*float*|final_csv|State participation in a given exam as percentage of national average participation| 
+|sat_free|*bool*|final_csv|Expresses whether students in a state can take the SAT for free. 1= True, 0= False| 
+|sat19_part_rate|*float*|final_csv|SAT participation rate (in percentage) in the year 2019. 0.22 means 22%|
+|sat19_total_score|*float*|final_csv|Average total score for a given state in the year 2019, computed using EWR and Math scores (Possible score range 400-1600)|  
+|score_pct_change|*float*|final_csv|State average score in a given exam as percentage of national average score| 
+|state|*object*|final_csv|Names of all US states and the District of Columbia| 
 
 
 # Summary of analysis
