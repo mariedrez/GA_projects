@@ -7,7 +7,7 @@ NexRes is a real estate agency in Ames with a portal that is highly trusted for 
 
 ## Problem Statement
 
-I am leading the Data team at Nex Res, whose vision is to maintain its top status in the growing industry. NexRes needs the team to develop a data-driven solution to achieve their vision. Additionally, NexRes is a excellence-oriented and people-centred organisation, motivated to empower our agents to carry out their job.  To that end, the Data team has undertaken this project to predict the final price of each home with the lowest RMSE score possible via unique feature engineering and linear regression models such as Simple Linear, Ridge and Lasso.
+Nex Res, whose aim is to maintain its top status in the growing industry has activated its Data department to develop a data-driven solution to achieve their vision. Additionally, NexRes is a excellence-oriented and people-centred organisation, motivated to empower our agents to carry out their job.  To that end, the team has undertaken this project to predict the final price of each home with the lowest RMSE score possible via unique feature engineering and linear regression models such as Simple Linear, Ridge and Lasso.
 
 The best model will help NexRes agents to advise clients on seeking fair valuations on their property, and as well as advise clients on actionable steps to take to reach their target price. NexRes agents are concerned with assisting homeowners who fall under two categories: those who are looking to sell, and those who are looking to buy. Agents want to provide top value to clients, who in turn want these questions answered:
 
